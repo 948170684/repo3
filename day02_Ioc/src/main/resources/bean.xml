@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <bean id="AccountService" class="com.itheima.service.impl.AccountServiceImpl"></bean>
+    <bean id="AccountDao" class="com.itheima.dao.impl.AccountDaoImpl"></bean>
+    <bean id="AccountOne" class="com.itheima.service.impl.AccountServiceImplOne" scope="prototype">
+        <property name="username" value="张三"></property>
+        <property name="myarry">
+            <array>
+                <value>a</value>
+                <value>b</value>
+                <value>c</value>
+            </array>
+        </property>
+        <property name="str">
+            <list>
+                <value>d</value>
+                <value>e</value>
+                <value>f</value>
+            </list>
+        </property>
+        <property name="password" value="123">
+        </property>
+        <property name="mylist">
+            <list>
+                <value>h</value>
+                <value>i</value>
+                <value>j</value>
+            </list>
+        </property>
+        <property name="properties">
+            <props>
+                <prop key="height">175</prop>
+                <prop key="weigth">120</prop>
+            </props>
+        </property>
+        <property name="map">
+            <map>
+                <entry key="1" value="name"></entry>
+            </map>
+            <!--<prop key="sex">mele</prop>
+                <prop key="address">dreamhouse</prop>-->
+        </property>
+        <property name="birthday" ref="now"></property>
+    </bean>
+<bean id="now" class="java.util.Date"></bean>
+</beans>
